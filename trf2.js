@@ -23,7 +23,7 @@ const puppeteer = require('puppeteer');
             
         }
 
-        await page.goto(link);
+        await page.goto(link,{waitUntil: 'load'});
         await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-3"]', { visible: true })
         await page.type('#mat-input-0',cpf);
         await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-0"]', { visible: true })
