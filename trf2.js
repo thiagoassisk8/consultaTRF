@@ -12,16 +12,7 @@ const puppeteer = require('puppeteer');
         let cpf ='07037829161';
 
         const page = await browser.newPage();
-        // async function ApertarTabs(funcao) {
-        //     if(typeof(funcao)=="function")
-        //     // funcao.call();
-        //     for (var i=0;i<17;i++){
-        //         console.log('chegou no for')
-        //         return funcao.call();
-        //     }
-        //     return await page.keyboard.press('Enter');
-            
-        // }
+        
 
         await page.goto(link,{waitUntil: 'load'});
         await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-3"]', { visible: true })
