@@ -9,15 +9,15 @@ const puppeteer = require('puppeteer');
             defaultViewport: null
         });
         let link ='https://sistemas.trf1.jus.br/certidao/#/solicitacao';
-        let cpf ='07037829161';
+        let cpf = '07037829161'; // coloque o cpf do prestador aqui (tudo junto)
 
         const page = await browser.newPage();
         
 
-        await page.goto(link,{waitUntil: 'load'});
-        await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-3"]', { visible: true })
+        await page.goto(link, {waitUntil: 'load'});
+        await page.waitForSelector('span[class="mat-select-placeholder ng-tns-c87-1 ng-star-inserted"]', { visible: true })
         await page.type('#mat-input-0',cpf);
-        await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-0"]', { visible: true })
+        await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c67-2"]', { visible: true })
         await page.click('#mat-select-0')
         await page.click('#mat-option-2')
         await page.waitForSelector('input[class="mat-autocomplete-trigger mat-chip-input mat-input-element ng-untouched ng-pristine ng-valid"]');
@@ -40,19 +40,12 @@ const puppeteer = require('puppeteer');
                 document.getElementsByClassName('mat-focus-indicator button-add mdl-button mdl-js-button mdl-button--raised mdl-button--primary imprimir mat-raised-button mat-button-base mat-primary')[0].click();
 
             }
-        // await page.goto('https://sistemas.trf1.jus.br/certidao/#/solicitacao')
+        
             
         });
-
-
         
         
-          
-        
-    
-        
-    
-        
+                                          
     
     } catch (e){
         console.log('Ishh, Deu ruim!',e);

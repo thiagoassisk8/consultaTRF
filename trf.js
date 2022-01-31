@@ -15,9 +15,9 @@ const puppeteer = require('puppeteer');
         
 
         await page.goto(link, {waitUntil: 'load'});
-        await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-3"]', { visible: true })
+        await page.waitForSelector('span[class="mat-select-placeholder ng-tns-c87-1 ng-star-inserted"]', { visible: true })
         await page.type('#mat-input-0',cpf);
-        await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c66-0"]', { visible: true })
+        await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c67-2"]', { visible: true })
         await page.click('#mat-select-0')
         await page.click('#mat-option-1')
         await page.waitForSelector('input[class="mat-autocomplete-trigger mat-chip-input mat-input-element ng-untouched ng-pristine ng-valid"]');
