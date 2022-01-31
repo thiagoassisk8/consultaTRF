@@ -19,7 +19,8 @@ const puppeteer = require('puppeteer');
         await page.type('#mat-input-0',cpf);
         await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c67-2"]', { visible: true })
         await page.click('#mat-select-0')
-        await page.click('#mat-option-2')
+        await delay(900);
+        await page.click('#mat-option-1')
         await page.waitForSelector('input[class="mat-autocomplete-trigger mat-chip-input mat-input-element ng-untouched ng-pristine ng-valid"]');
         await page.click('input[id="mat-chip-list-input-0"]', {class:'mat-autocomplete-trigger mat-chip-input mat-input-element ng-pristine ng-valid ng-touched' })
         await new Promise(resolve => setTimeout(resolve, 900));
@@ -52,3 +53,8 @@ const puppeteer = require('puppeteer');
     }
 
 })();
+function delay(time){
+    return new Promise(function (resolve){
+        setTimeout(resolve,time);
+    });
+}
