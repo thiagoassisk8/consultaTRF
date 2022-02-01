@@ -9,14 +9,18 @@ const puppeteer = require('puppeteer');
             defaultViewport: null
         });
         let link ='https://sistemas.trf1.jus.br/certidao/#/solicitacao';
-        let cpf = '07037829161'; // coloque o cpf do prestador aqui (tudo junto)
+        function RetiraMascara(ObjCPF) {
+            console.log(ObjCPF.replace(/\D/g, ''))
+              return ObjCPF.replace(/\D/g, '');
+          }
+        let cpf = '044.932.841.45'; 
 
         const page = await browser.newPage();
         
 
         await page.goto(link, {waitUntil: 'load'});
         await page.waitForSelector('span[class="mat-select-placeholder ng-tns-c87-1 ng-star-inserted"]', { visible: true })
-        await page.type('#mat-input-0',cpf);
+        await page.type('#mat-input-0',RetiraMascara(cpf));
         await page.waitForSelector('div[class="mat-form-field-infix ng-tns-c67-2"]', { visible: true })
         await page.click('#mat-select-0')
         await delay(900);
