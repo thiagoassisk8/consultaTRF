@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const CREDS = require('./cpf');
 
 
 (async function(){
@@ -13,7 +14,7 @@ const puppeteer = require('puppeteer');
             console.log(ObjCPF.replace(/\D/g, ''))
               return ObjCPF.replace(/\D/g, '');
           }
-        let cpf = '044.932.841.45'; 
+        let cpf = CREDS.cpf; 
         
         const page = await browser.newPage();
         
