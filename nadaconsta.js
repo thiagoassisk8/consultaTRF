@@ -13,7 +13,7 @@ const CREDS = require('./cpf');
             console.log(ObjCPF.replace(/\D/g, ''))
               return ObjCPF.replace(/\D/g, '');
           }
-          // Criminal
+          // Civil
         const page = await browser.newPage();
         await page.goto(link, {waitUntil: 'load'});
         await page.waitForSelector('span[class="mat-select-placeholder ng-tns-c87-1 ng-star-inserted"]', { visible: true })
@@ -52,7 +52,7 @@ const CREDS = require('./cpf');
             }
         })
 
-        // Civil
+        // Criminal
         const newpage = await browser.newPage();
         await newpage.goto(link, {waitUntil: 'load'});
         await newpage.waitForSelector('span[class="mat-select-placeholder ng-tns-c87-1 ng-star-inserted"]', { visible: true })
